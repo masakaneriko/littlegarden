@@ -1,0 +1,117 @@
+body {
+    font-family: "Noto Sans JP", sans-serif;
+    background-color: white;
+}
+
+// CLAMP CLAMP CLAMP
+h1 {
+    font-size: 1.7rem;
+    font-size: clamp(1.7rem, 0.94884437596302rem + 3.204930662557781vw, 3rem);
+}
+h2 {
+    font-size: 1.5rem;
+    font-size: clamp(
+        1.5rem,
+        0.9221879815100154rem + 2.465331278890601vw,
+        2.5rem
+    );
+}
+h3 {
+    font-size: 1.17rem;
+    font-size: clamp(
+        1.17rem,
+        0.8637596302003081rem + 1.3066255778120186vw,
+        1.7rem
+    );
+}
+h4 {
+    font-size: 1rem;
+    font-size: clamp(
+        1rem,
+        0.7110939907550077rem + 1.2326656394453006vw,
+        1.5rem
+    );
+}
+
+p {
+    font-size: 1rem;
+    font-size: clamp(1rem, 0.7rem + 1vw, 1.17rem);
+}
+
+th,
+td {
+    font-size: 1rem;
+}
+
+// Google Fonts
+.font-kiwi {
+    font-family: "Kiwi Maru", serif;
+}
+
+.font-caveat {
+    font-family: "Caveat", cursive;
+}
+
+.montserrat {
+    font-family: "Montserrat", sans-serif;
+}
+
+.fredericka {
+    font-family: "Fredericka the Great", cursive;
+}
+
+// Font awesome
+.external-link::after {
+    content: "\f08e";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 700;
+    padding-left: 0.2em;
+}
+
+.magnify-icon {
+    align-items: center;
+
+    &::before {
+        content: "\f002";
+        font-family: "Font Awesome 6 Free";
+        font-weight: 700;
+        padding-right: 0.5em;
+    }
+}
+
+// Other
+.en-text {
+    position: relative;
+
+    &::before {
+        content: attr(data-en);
+        font-family: "Caveat", cursive;
+        font-weight: 400;
+        position: relative;
+        inset: 0;
+        display: block;
+        color: get-color(primary);
+    }
+}
+
+.sec-num-right {
+    font-size: min(15vw, 10rem);
+    color: get-color(primary);
+    text-shadow: 0.2rem 0.2rem 0.1rem #fff;
+    position: absolute;
+    z-index: 3;
+    bottom: -15%;
+    right: 2vw;
+    font-family: "Montserrat", sans-serif;
+}
+
+.sec-num-left {
+    font-size: min(15vw, 10rem);
+    color: get-color(primary);
+    text-shadow: 0.2rem 0.2rem 0.1rem #fff;
+    position: absolute;
+    z-index: 3;
+    bottom: -15%;
+    left: 2vw;
+    font-family: "Montserrat", sans-serif;
+}

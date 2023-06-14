@@ -1,0 +1,76 @@
+// Button Map
+$button-types: (
+    green: $primary-color,
+    orange: $secondary-color,
+    white: white,
+    red: $red-color,
+    blue: $blue-color,
+    gray: darken($gray-color, $darken),
+);
+
+// Size Map
+$button-sizes: (
+    sm: 160px,
+    md: 250px,
+    lg: 300px,
+    // sm: 40%,
+    // md: 65%,
+    // lg: 100%,,,,,,,,
+);
+
+%button {
+    padding: 1em 0;
+    border-radius: 0.25em;
+    cursor: pointer;
+    border: 1px solid;
+    margin-left: auto;
+    margin-right: auto;
+    margin-inline: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+    font-size: clamp(0.8rem, 3vw, 1rem);
+}
+
+@each $type, $color in $button-types {
+    @each $key, $size in $button-sizes {
+        .button-#{"" + $type}-#{$key} {
+            @extend %button;
+            width: $size;
+
+            @if $type == white {
+                color: $primary-color;
+                background: linear-gradient(
+                    to right,
+                    $primary-color 50%,
+                    $color 50%
+                );
+                background-size: 200% 100%;
+                background-position: right bottom;
+                border-color: $primary-color;
+                @include respond-to(desktop) {
+                    &:hover,
+                    &:focus {
+                        color: $color;
+                        background-position: left bottom;
+                    }
+                }
+            } @else {
+                color: white;
+                background: linear-gradient(to right, white 50%, $color 50%);
+                background-size: 200% 100%;
+                background-position: right bottom;
+                border-color: $color;
+
+                @include respond-to(desktop) {
+                    &:hover,
+                    &:focus {
+                        color: $color;
+                        background-position: left bottom;
+                    }
+                }
+            }
+        }
+    }
+}

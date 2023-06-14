@@ -1,0 +1,16 @@
+.section-image {
+    margin: min(10vw, 5rem) auto;
+    position: relative;
+    transition: 1s ease-in-out;
+
+    img {
+        width: 100%;
+    }
+}
+
+.section-text {
+    p {
+        margin: 2rem 0;
+        word-break: break-all;
+    }
+}

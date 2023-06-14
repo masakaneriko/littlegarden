@@ -1,0 +1,111 @@
+.page-other-services {
+    #ichiji-hoiku {
+        @include respond-to(desktop) {
+            .flexbox {
+                display: flex;
+                align-items: flex-start;
+                justify-content: flex-start;
+                padding: 2vw 0;
+
+                .box {
+                    flex-basis: 50%;
+                    margin-right: 1rem;
+                    padding: 0;
+                }
+            }
+        }
+
+        .section-text {
+            margin: 2rem 0;
+            @include respond-to(desktop) {
+                margin: 0;
+            }
+        }
+
+        .section-image {
+            margin: 2rem 0;
+            @include respond-to(desktop) {
+                margin: 0.5vw 0 0 0;
+            }
+        }
+
+        table {
+            border-collapse: separate;
+            border-spacing: 0 0.5rem;
+            width: 100%;
+            margin: 0;
+        }
+
+        table th,
+        table td {
+            text-align: center;
+            padding: 0.8rem;
+        }
+
+        table th {
+            border-radius: 0.3em;
+            background-color: #fff;
+            width: 30vw;
+
+            @include respond-to(desktop) {
+                width: 10vw;
+            }
+        }
+
+        table td {
+            text-align: left;
+        }
+    }
+
+    #reserve {
+        .reserve-text {
+            border-bottom: dotted 1px #ccc;
+            padding: 2rem 0;
+
+            .step-title {
+                $mini-arrow: 11px;
+
+                position: relative;
+                display: flex;
+                align-items: center;
+                gap: calc(2 * $mini-arrow);
+                margin-bottom: 2rem;
+
+                .icon {
+                    position: relative;
+                    top: 0;
+                    left: 0;
+                    padding: 1rem 1rem;
+                    color: #e4efe7;
+                    background: get-color(primary);
+                    border-radius: 0.2rem;
+                    white-space: nowrap;
+                }
+
+                .icon::after {
+                    position: absolute;
+                    top: calc(50% - 7px);
+                    right: -($mini-arrow);
+                    width: 0;
+                    height: 0;
+                    content: "";
+                    border-width: 7px 0 7px 12px;
+                    border-style: solid;
+                    border-color: transparent transparent transparent
+                        get-color(primary);
+                }
+            }
+
+            .subhead {
+                display: inline-block;
+                background: linear-gradient(transparent 40%, #ffe653 40%);
+                margin: 0 0 1.2rem;
+                word-break: keep-all;
+            }
+
+            p {
+                margin: 0 0 2rem;
+            }
+        }
+    }
+}

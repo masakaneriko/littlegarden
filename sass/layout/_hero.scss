@@ -1,0 +1,48 @@
+#hero {
+    padding: 0;
+}
+
+.hero-banner {
+    position: relative;
+    height: 30vh;
+
+    @include respond-to(desktop) {
+        height: 60vh;
+    }
+}
+
+.hero-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+// single-center.php
+.hero-mask {
+    .hero-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        -webkit-mask-image: url(../images/mask_header.svg);
+        -webkit-mask-size: cover;
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-position: center bottom;
+        mask-image: url(../images/mask_header.svg);
+        mask-size: cover;
+        mask-repeat: no-repeat;
+        mask-position: center bottom;
+
+        @include respond-to(tablet) {
+            -webkit-mask-image: initial;
+            mask-image: initial;
+        }
+    }
+}

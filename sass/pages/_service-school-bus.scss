@@ -1,0 +1,83 @@
+#single-service-school-bus {
+    .flex-wrap {
+        .flex {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 7%;
+            padding: 4% 0;
+            border-bottom: 1px solid #000;
+            align-items: center;
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            ul {
+                padding: 5% 0;
+            }
+
+            li {
+                padding-bottom: 1rem;
+                font-size: 0.9rem;
+                list-style-type: square;
+                &:last-child {
+                    padding-bottom: 0;
+                }
+
+                @include respond-to(desktop) {
+                    font-size: 1rem;
+                }
+            }
+
+            div {
+                margin: auto 0;
+
+                &:nth-of-type(2) {
+                    ul {
+                        padding-left: 5%;
+                    }
+                }
+            }
+        }
+    }
+
+    .sec-num-right {
+        position: inherit;
+        font-size: 1.8rem;
+    }
+
+    .rumble {
+        position: relative;
+
+        &::before {
+            content: "";
+            display: block;
+            width: 18vw;
+            height: 13vw;
+            background: url(../images/school-bus.svg) no-repeat 0% 50%;
+            margin: 0 0 0 auto;
+            animation: rumble 0.1s linear infinite;
+        }
+    }
+
+    section#safety-points {
+        h2 {
+            margin-bottom: 2rem;
+        }
+    }
+
+    #bus-fee {
+        font-family: "Montserrat", sans-serif;
+
+        table {
+            @include table();
+            h3 {
+                color: get-color(primary);
+            }
+            th,
+            td {
+                padding: 1em;
+            }
+        }
+    }
+}

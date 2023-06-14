@@ -1,0 +1,51 @@
+.page-template-information {
+    #visit,
+    #how-to-enter {
+        padding-top: $section-padding;
+    }
+    h2 {
+        text-align: center;
+    }
+
+    .reservation,
+    .application-form,
+    .entrance-flow {
+        > * {
+            margin-bottom: 2rem;
+        }
+    }
+
+
+    .application-form {
+        p {
+            margin-bottom: 1rem;
+            text-align: center;
+            padding: 0 1em;
+            word-break: keep-all;
+        }
+
+        .bg-fill {
+            border: 1px solid get-color(primary);
+            overflow: hidden;
+            padding: 2em 0;
+
+            &:nth-of-type(2) {
+                box-shadow: -1rem 1rem 0 get-color(primary, light);
+            }
+            &:nth-of-type(3) {
+                box-shadow: 1rem 1rem 0 get-color(secondary, light);
+            }
+        }
+        span {
+            white-space: nowrap;
+
+            &:not(:last-of-type) {
+                &::after {
+                    content: "・";
+                    position: relative;
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}

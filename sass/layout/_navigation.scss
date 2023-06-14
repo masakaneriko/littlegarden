@@ -1,0 +1,482 @@
+// Header Navigation
+
+header {
+    @include respond-to(tablet) {
+        height: $fixed-top-height;
+    }
+}
+
+.header-nav {
+    position: fixed;
+    inset: 0;
+    background: white;
+    opacity: 0;
+    transition: all 0.3s ease-out;
+    z-index: 10;
+    display: none;
+
+    @include respond-to(tablet) {
+        margin: 0 auto;
+        position: fixed !important;
+        height: $fixed-top-height;
+        display: block;
+        opacity: 1;
+        background: transparent;
+        width: 100%;
+    }
+
+    &[open] {
+        display: block;
+        animation: fade-in 500ms forwards;
+    }
+
+    &[close] {
+        display: block;
+        animation: fade-out 500ms forwards;
+    }
+
+    .container {
+        width: 90vw;
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        flex-direction: column;
+        -webkit-box-pack: start;
+        justify-content: flex-start;
+        gap: 2vw;
+        padding: 5vw 0;
+        height: calc(100vh - $fixed-bottom-height);
+        overflow: scroll;
+
+        @include respond-to(tablet) {
+            justify-content: space-between;
+            margin: 0 auto;
+            overflow: visible;
+            flex-direction: inherit;
+            height: $fixed-top-height;
+            padding: 0;
+            width: 100%;
+            background: rgba(0, 105, 52, 0.9);
+            box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.2);
+            max-width: initial;
+        }
+    }
+
+    a {
+
+        &:hover,
+        &:active,
+        &:focus {
+            color: get-color(secondary);
+        }
+    }
+}
+
+.header-nav-logo {
+    height: 16vw;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+
+    img {
+        height: 100%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-inline: auto;
+    }
+
+    @include respond-to(tablet) {
+        width: 20%;
+        min-width: 150px;
+        max-width: 300px;
+        height: auto;
+        margin: auto 0;
+        display: inline-block;
+        padding-left: 1rem;
+    }
+}
+
+.header-nav-menu {
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2vw;
+
+    @include respond-to(tablet) {
+        justify-content: center;
+        flex-wrap: nowrap;
+        width: 60%;
+        max-width: 1200px;
+        gap: 1vw;
+        position: relative;
+    }
+
+    li {
+        width: 48%;
+
+        @include respond-to(tablet) {
+            width: 7vw;
+            // margin: auto 0;
+            max-width: 200px;
+            gap: 1vw;
+        }
+
+        a {
+            display: -webkit-box;
+            display: flex;
+            -webkit-box-pack: center;
+            justify-content: center;
+            padding: 1.7em 0;
+            background: get-color(primary, light);
+            font-size: clamp(0.75rem, 0.4rem + 1.8vw, 1.25rem);
+            border-radius: 5px;
+            font-weight: 700;
+            color: black;
+
+            @include respond-to(tablet) {
+                background: transparent;
+                color: white;
+                display: -webkit-box;
+                display: flex;
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                flex-direction: column;
+
+                flex-wrap: wrap;
+                height: 100%;
+                align-items: center;
+                align-content: center;
+                text-align: center;
+                padding: 0;
+                font-size: clamp(0.75rem, 0.6665rem + 0.1738vw, 0.875rem);
+
+                span {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+.header-nav-featured {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+
+    flex-direction: column;
+    gap: 2vw;
+
+    @include respond-to(tablet) {
+        display: none;
+    }
+
+    li:first-child {
+        margin-bottom: 2vw;
+    }
+
+    a {
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        text-align: start;
+        font-weight: 700;
+        background: get-color(secondary, light);
+        border-radius: 10px;
+        height: max(100px, 20vw);
+        overflow: hidden;
+
+        p {
+            flex: 6;
+            padding-left: 1.7em;
+            font-size: clamp(1rem, 0.65rem + 1.8vw, 1.5rem);
+            color: black;
+        }
+
+        >div {
+            overflow: hidden;
+            flex: 4;
+            height: 100%;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.header-nav-sub {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+
+    justify-content: center;
+    margin: 2vw 0;
+
+    li:not(:first-of-type)::before {
+        content: "|";
+        padding: 0 1rem;
+    }
+
+    a {
+        color: black;
+        font-weight: 700;
+        font-size: clamp(0.75rem, 0.4rem + 1.8vw, 1.25rem);
+    }
+
+    @include respond-to(tablet) {
+        display: none;
+    }
+}
+
+// fixed bottom navigation
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    height: $fixed-bottom-height;
+    width: 100%;
+    background: get-color(primary);
+    z-index: 20;
+    box-shadow: 0 0 5px get-color(gray);
+
+    @include respond-to(tablet) {
+        display: none;
+    }
+
+    ul {
+        display: -webkit-box;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 100%;
+    }
+
+    li {
+        display: -webkit-box;
+        display: flex;
+        width: 25%;
+        height: 100%;
+
+        &:not(:first-of-type)::before {
+            display: block;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 50%;
+            border-left: 1px dotted get-color(gray, light);
+            content: "";
+        }
+    }
+
+    i {
+        font-size: clamp(0.9rem, 0.5rem + 3vw, 2rem);
+    }
+
+    a,
+    button {
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+
+        flex-direction: column;
+        width: 100%;
+        gap: 1vw;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: clamp(0.5rem, 3vw, 1rem);
+    }
+}
+
+// Yum :P
+.hamburger-box {
+    width: 40px;
+    height: 24px;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.hamburger-inner {
+    background-color: white;
+    transition-duration: 0.15s;
+    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+
+    &::before,
+    &::after {
+        content: "";
+        display: block;
+    }
+
+    &::before {
+        top: $burger-padding;
+        transition: top 0.15s 0.15s ease, opacity 0.1s ease;
+    }
+
+    &::after {
+        bottom: $burger-padding;
+        transition: bottom 0.15s 0.15s ease,
+            transform 0.15s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+    width: 2em;
+    height: 3px;
+    background-color: white;
+    position: absolute;
+}
+
+.hamburger[open] .hamburger-inner {
+    transform: rotate(45deg);
+    transition-delay: 0.15s;
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+
+    &::before {
+        top: 0;
+        opacity: 0;
+        transition: top 0.15s ease, opacity 0.1s 0.15s ease;
+    }
+
+    &::after {
+        bottom: 0;
+        transform: rotate(-90deg);
+        transition: bottom 0.15s ease,
+            transform 0.15s 0.15s cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+}
+
+.hamburger[open]>span:nth-of-type(2),
+.hamburger>span:nth-of-type(3) {
+    display: none;
+}
+
+.hamburger>span:nth-of-type(2),
+.hamburger[open]>span:nth-of-type(3) {
+    display: inline-block;
+}
+
+// desktop NAV STUFF HERE
+.child_menu {
+    display: none;
+}
+
+@include respond-to(tablet) {
+    .menu {
+        position: relative;
+        z-index: 1;
+    }
+
+    .child_menu {
+        /* 下層メニューのスタイル */
+        display: block;
+        // width: 200%;
+        position: absolute;
+        top: 100%;
+        left: 0%;
+        transform: translateX(-50%);
+        color: #333;
+        visibility: hidden;
+    }
+
+    .child_menu>li>a,
+    .child_menu>li>p {
+        /* 子項目のスタイル */
+        font-size: 0.8em;
+        transition: all 0s linear !important;
+        width: 200%;
+        border-radius: 0;
+        background: rgba(0, 105, 52, 0.7);
+        padding: 1.7em 0;
+    }
+
+    .child_menu a:hover {
+        color: #fff;
+    }
+
+    .child_menu>li {
+        position: relative;
+
+        a {
+            transition: all 0s linear !important;
+        }
+
+        p {
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 1.5rem 0;
+        }
+    }
+
+    .child_menu>li>ul {
+        left: 200%;
+        position: absolute;
+        top: 0;
+        width: 100%;
+
+        a {
+            font-size: 0.8em;
+            border-radius: 0;
+        }
+
+        li {
+            width: 200%;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 600;
+            //↑とりあえず
+        }
+    }
+
+    .child_menu>li>a:hover,
+    .child_menu>li>p:hover {
+        /* 子項目のスタイル（ホバー時） */
+        background: rgba(0, 105, 52, 0.8);
+        //color: #fff;
+        color: get-color(secondary);
+    }
+
+    .menu:hover .child_menu {
+        /* 下層メニューのスタイル（親項目ホバー時） */
+        visibility: visible;
+
+        /* 下層メニューを表示 */
+    }
+
+    .narashino {
+        position: relative;
+    }
+
+    .narashino ul {
+        visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 200%;
+    }
+
+    .narashino:hover .narashino-li {
+        visibility: visible;
+    }
+
+    .magnify-icon {
+        &::before {
+            display: none;
+        }
+    }
+}

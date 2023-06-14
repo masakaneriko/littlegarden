@@ -1,0 +1,188 @@
+html {
+    scroll-padding-top: 30px; // height of sticky header
+    @include respond-to(tablet) {
+        scroll-padding-top: calc($fixed-top-height + 30px);
+    }
+}
+
+.post-type-archive-center {
+    section#center-map {
+        padding: 0;
+        @include respond-to(desktop) {
+            max-width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-inline: auto;
+            background-color: get-color(primary, light);
+        }
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    .center-state {
+        h2 {
+            font-family: "Kiwi Maru", serif;
+        }
+
+        p {
+            font-family: "Caveat", cursive;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        img {
+            width: 35%;
+            @include respond-to(tablet) {
+                width: 25%;
+            }
+        }
+    }
+
+    .center-map-pc {
+        width: 80vw;
+        margin: 0 auto;
+        padding: 2vw;
+    }
+    .center-state,
+    .center-state-list {
+        text-align: center;
+        margin-bottom: min(5vw, 2rem);
+    }
+
+    .center-state-list {
+        padding: min(5vw, 2rem) 0;
+
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.2em;
+            justify-content: center;
+
+            @include respond-to(desktop) {
+                gap: 0.5em;
+            }
+            a {
+                display: block;
+                padding: 0.1em 0.35em;
+                border: 1px solid get-color(primary);
+                border-radius: 5px;
+                font-size: clamp(1rem, 0.9rem + 0.4vw, 1.17rem);
+
+                &:hover,
+                &focus {
+                    border-color: get-color(secondary);
+                }
+            }
+        }
+    }
+
+    .center-city {
+        text-align: start;
+        padding-bottom: 3vh;
+
+        &:last-of-type {
+            padding-bottom: 0;
+        }
+
+        h3 {
+            padding: 2vh 0;
+
+            &::before {
+                content: "";
+                position: relative;
+                border-left: 5px solid get-color(primary);
+                padding-right: 10px;
+                border-radius: 5px 0 0 0;
+            }
+
+            &:focus,
+            &:active {
+                color: get-color(secondary);
+                &::before {
+                    border-color: get-color(secondary);
+                }
+            }
+        }
+    }
+
+    .center-city-item {
+        a,
+        .guam-link {
+            display: block;
+            background: get-color(primary, light);
+            font-weight: 700;
+            padding: 0.5em 1.5em;
+            font-size: 1rem;
+            font-size: clamp(1rem, 0.7rem + 1vw, 1.2rem);
+            white-space: nowrap;
+
+            span {
+                font-weight: 400;
+                font-size: 0.85rem;
+                font-size: clamp(0.85rem, 0.5rem + 0.9vw, 1rem);
+            }
+        }
+
+        li {
+            margin-bottom: 0.5em;
+        }
+
+        @include respond-to(desktop) {
+            a {
+                &:hover {
+                    background-color: get-color(secondary, light);
+                }
+            }
+        }
+    }
+
+    #center-chiba {
+        padding-top: 10vw;
+    }
+
+    #center-guam {
+        .center-city-item {
+            p {
+                padding-top: 2vh;
+            }
+        }
+    }
+
+    #center-other {
+        text-align: center;
+        border-top: 1px dashed #ccc;
+        padding: 10vw 0;
+
+        p {
+            font-size: clamp(1rem, 0.5rem + 1vw, 1.17rem);
+            margin-bottom: 5vh;
+        }
+    }
+
+    .center-other-banner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+
+        li {
+            border: 2px solid get-color(gray);
+        }
+
+        a {
+            &:hover,
+            &:focus {
+                opacity: 0.7;
+            }
+
+            img {
+                width: 100%;
+                max-width: 300px;
+                height: 100%;
+                display: block;
+            }
+        }
+    }
+}

@@ -1,0 +1,144 @@
+%main-line {
+  padding: 0.5em 0;
+  position: relative;
+}
+
+%green-line {
+  content: "";
+  position: absolute;
+  width: 20%;
+  height: 5px;
+  background-color: get-color(primary);
+  top: 100%;
+  left: 0;
+  border-radius: 3px;
+}
+
+.underline-1 {
+  @extend %main-line;
+  border-bottom: 5px dotted get-color(gray);
+
+  &::after {
+    @extend %green-line;
+  }
+}
+
+.underline-2 {
+  @extend %main-line;
+  border-bottom: 3px dotted get-color(gray);
+}
+
+.underline-3 {
+  @extend %main-line;
+  border-bottom: 5px solid get-color(gray);
+
+  &::after {
+    @extend %green-line;
+  }
+}
+
+.left-marker {
+  padding-left: 0.5em;
+  margin: 1.5em 0;
+  background: transparent;
+  border-left: solid 3px get-color(primary);
+  @include respond-to(tablet) {
+    border-width: 5px;
+  }
+}
+
+// ※※※ note ※※※
+span.note {
+  display: block;
+  font-size: 0.9rem;
+  font-style: italic;
+
+  &:before {
+    content: "※";
+    display: inline-block;
+    position: relative;
+    padding-right: 0.3em;
+  }
+}
+
+// flow component with circle and marker on the left
+$circle: 2em;
+$border: 0.2em;
+$height: 100%;
+
+.entrance-flow {
+  > * {
+      margin-bottom: 2rem;
+  }
+}
+.flow {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-left: calc($circle / 4);
+}
+
+.flow-item {
+  position: relative;
+  padding-bottom: 2rem;
+
+  > * {
+    padding-left: 2rem;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 0;
+    height: $height;
+    top: calc((100% - $height) / 2);
+    border-left: $border solid get-color(primary);
+  }
+  &:last-child {
+    &::before {
+      height: 0;
+    }
+  }
+  a {
+    font-weight: 700;
+    text-decoration: underline;
+  }
+  li {
+    font-size: clamp(1rem,.7rem + 1vw,1.17rem);
+    margin-bottom: 0.5em;
+  }
+}
+
+.flow-title {
+  display: flex;
+  align-items: center;
+  background: get-color(primary, light);
+  color: get-color(primary);
+  font-weight: 700;
+  position: relative;
+  line-height: 2;
+  margin-bottom: 1rem;
+  white-space: nowrap;
+  @include respond-to(desktop) {
+    font-size: 1.27rem;
+  }
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    background: get-color(primary);
+    border-radius: 50%;
+    width: $circle;
+    height: $circle;
+    border: $border solid white;
+    left: calc(-1 * (($circle + $border) / 2));
+    // animation: lds-circle 20s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+  }
+}
+
+.decoration-icon {
+  margin: 0 auto;
+  width: 20px;
+  height: auto;
+}

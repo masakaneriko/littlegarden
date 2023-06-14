@@ -1,0 +1,101 @@
+// Front-page & Single-center
+h2 {
+    .title-bg {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+    }
+}
+
+.bg-polkadot {
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: -1rem;
+        right: 1rem;
+        width: 100%;
+        height: 100%;
+        background-image: radial-gradient(
+            get-color(primary, light) 40%,
+            rgba(0 0 0 / 0) 40%
+        );
+        background-size: 0.7rem 0.7rem;
+        background-position: right bottom;
+        z-index: -1;
+    }
+}
+
+.bg-stripe {
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: -1rem;
+        right: 1rem;
+        width: 100%;
+        height: 100%;
+        background-image: repeating-linear-gradient(
+            -45deg,
+            get-color(primary, light) 0rem,
+            get-color(primary, light) 0.25rem,
+            rgba(0 0 0 / 0) 0%,
+            rgba(0 0 0 / 0) 50%
+        );
+        background-size: 0.7rem 0.7rem;
+        background-position: right bottom;
+        z-index: -1;
+    }
+}
+
+.bg-fill {
+    box-shadow: 1rem 1rem 0 get-color(primary, light);
+}
+
+.bg-unfill {
+    box-shadow: 1rem 1rem 0 white;
+}
+
+.bg-cloth {
+    background-image: url(../images/bg-cloth.png);
+    background-size: 50vw;
+}
+
+.bg-linen {
+    background-image: url(../images/bg_linen.jpg);
+    background-repeat: repeat;
+}
+
+.bg-nordic {
+    background-image: url(../images/nordic-pattern.svg);
+    background-size: 50vw auto;
+    background-repeat: repeat;
+}
+
+.bg-skew {
+    @include skew();
+}
+
+.bg-skew-end {
+    // remember to add .footer-top {background-color: get-color(primary, light);}
+
+    width: 100vw;
+    padding-top: 20vw;
+    position: relative;
+    background: get-color(primary, light);
+    overflow-x: hidden;
+
+    &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 0 10vw 100vw;
+        border-color: transparent transparent transparent #fff;
+    }
+}

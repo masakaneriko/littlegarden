@@ -1,0 +1,260 @@
+// Responsive Mixin
+$breakpoints: (
+    "tablet": 768px,
+    "desktop": 1024px,
+);
+
+/// Responsive breakpoint manager
+/// @access public
+/// @param {String} $breakpoint - Breakpoint
+/// @requires $breakpoints
+@mixin respond-to($breakpoint) {
+    $raw-query: map-get($breakpoints, $breakpoint);
+
+    @if $raw-query {
+        $query: if(
+            type-of($raw-query) == "string",
+            unquote($raw-query),
+            inspect($raw-query)
+        );
+
+        @media (min-width: #{$query}) {
+            @content;
+        }
+    } @else {
+        @error 'No value found for `#{$breakpoint}`. '
+        + 'Please make sure it is defined in `$breakpoints` map.';
+    }
+}
+
+// Ellipsis Mixin
+@mixin ellipsis($lines: 1) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+}
+
+// Table Mixin
+@mixin table() {
+    width: 100%;
+    border-collapse: collapse;
+
+    th,
+    td {
+        display: block;
+        text-align: start;
+        padding: 0.5em;
+        border: 1px solid get-color(primary, light);
+    }
+
+    th {
+        background-color: get-color(primary, light);
+    }
+
+    td {
+        padding-bottom: 10px;
+    }
+
+    iframe {
+        border: 1px solid get-color(gray);
+        width: 100%;
+        height: min(65vw, 400px);
+    }
+}
+
+// School List Mixin
+@mixin school-list() {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5em 0;
+    margin: 2rem 0;
+    @include respond-to(desktop) {
+        font-size: 1.17rem;
+    }
+
+    li {
+        width: calc(50% - 2vw);
+
+        a {
+            display: block;
+            padding: 0.7em 0 0.7em 0.7em;
+            background: get-color(primary, light);
+            border-left: 0.2em solid get-color(primary);
+            font-weight: 700;
+            white-space: nowrap;
+
+            &:hover,
+            &:focus {
+                border-color: get-color(secondary);
+            }
+        }
+    }
+}
+
+// Category(Tags) Mixin
+@mixin tags() {
+    // padding: 2px 10px;
+    padding: 0.1em 0.5em;
+    line-height: 1.5;
+    background: get-color(pink);
+    border-radius: 2px;
+    color: white;
+    white-space: nowrap;
+}
+
+// Background Skew Mixin
+@mixin skew() {
+    background: get-color(primary, light);
+    position: relative;
+    transform: skewY(-$skew);
+    padding: $section-padding 0;
+    margin-bottom: calc($section-padding * 1.5);
+
+    > * {
+        transform: skewY($skew);
+    }
+}
+
+// Archive-Center.php
+@mixin nav-underline() {
+    ul {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        row-gap: 0.75em;
+
+        a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75em;
+            position: relative;
+            // padding-inline: 0.5em;
+            color: black;
+
+            &::after {
+                content: "";
+                border-bottom: 3px solid get-color(primary);
+                border-radius: 5px;
+                position: relative;
+                // width: 1.5em;
+                width: min(10vw, 2.5em);
+                transition: all 200ms ease-in-out;
+            }
+
+            &:hover,
+            &:focus {
+                color: get-color(secondary);
+                &::after {
+                    border-color: get-color(secondary);
+                }
+            }
+        }
+    }
+}
+
+// I LOVE RAINBOWS
+@mixin rainbow-text() {
+    background-image: linear-gradient(
+        -45deg,
+        red,
+        orange,
+        yellow,
+        green,
+        blue,
+        indigo,
+        violet,
+        red
+    );
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbow-text 15s linear infinite;
+}
+@keyframes rainbow-text {
+    from {
+        background-position: -2000%;
+    }
+    to {
+        background-position: 2000%;
+    }
+}
+
+// Form
+@mixin form() {
+    .wpcf7 {
+        margin-top: $section-padding;
+        background: get-color(primary, light);
+        padding: 2vw;
+        border-radius: 10px;
+    }
+
+    form {
+        input,
+        textarea {
+            padding: 0.2em;
+            font-size: 115%;
+        }
+        p {
+            margin-bottom: min(5vw, 3rem);
+            font-weight: 700;
+        }
+        span {
+            &.required {
+                font-style: italic;
+                font-size: 0.8rem;
+                color: get-color(primary);
+            }
+
+            &[data-name="your-name"],
+            &[data-name="your-child"],
+            &[data-name="your-address"],
+            &[data-name="your-tel"],
+            &[data-name="your-email"] {
+                input {
+                    line-height: 1.5;
+                    width: 100%;
+                    margin-top: 1vw;
+                }
+            }
+            &[data-name="your-message"] {
+                textarea {
+                    width: 100%;
+                    margin-top: 1vw;
+                }
+            }
+        }
+        // checkboxes
+        .wpcf7-list-item {
+            font-weight: initial;
+            font-size: 105%;
+            margin-top: 1em;
+        }
+        .wpcf7-submit {
+            color: white;
+            background: get-color(primary);
+            padding: 10px 45px;
+            font-weight: 700;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-inline: auto;
+            border: 1px solid black;
+            &:hover,
+            &:focus {
+                cursor: pointer;
+                opacity: 0.9;
+            }
+        }
+        .wpcf7-spinner {
+            display: none;
+        }
+        .wpcf7-response-output {
+            border-color: #dc3232;
+            color: #dc3232;
+        }
+    }
+}

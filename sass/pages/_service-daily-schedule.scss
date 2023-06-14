@@ -1,0 +1,48 @@
+.postid-522 {
+    .intro-text {
+        span.note {
+            text-align: left;
+
+            @include respond-to(desktop) {
+                text-align: center;
+            }
+        }
+    }
+
+    #daily-schedule {
+        padding-top: 2rem;
+    }
+
+    .flow {
+        .flow-image {
+            margin: min(10vw, 3rem) auto 0;
+        }
+
+        h3 {
+            word-break: keep-all;
+        }
+
+        h3,
+        p {
+            margin-bottom: 2vw;
+        }
+    }
+
+    .flow-item:last-child {
+        position: relative;
+
+        &::after {
+            content: "";
+            display: inline-block;
+            width: 30%;
+            height: 15%;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -15%;
+            background-image: url(../images/children-of-the-world.svg);
+            background-repeat: no-repeat;
+            text-align: center;
+        }
+    }
+}

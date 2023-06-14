@@ -1,0 +1,531 @@
+#single-annual-events {
+    section {
+        padding: 5rem 0;
+    }
+
+    h2,
+    h3 {
+        text-align: center;
+    }
+
+    h3 {
+        padding-top: 0.5rem;
+        font-size: 1.2rem;
+    }
+
+    .h2-wrap {
+        max-width: 30rem;
+        margin: 0 auto;
+    }
+
+    .card {
+        width: 50%;
+        overflow: hidden;
+        background: transparent;
+        color: #424242;
+        margin: 20px auto;
+        display: inline-block;
+
+        p {
+            text-align: center;
+        }
+    }
+
+    .modal-open {
+        display: inline-block;
+        background: transparent;
+        color: #fff;
+    }
+
+    .modal-label {
+        position: relative;
+    }
+
+    .modal-radio {
+        position: absolute;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    .modal {
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        opacity: 0;
+        transform: scale(0);
+        transition: opacity 0.25s, transform 0.25s;
+        z-index: 99;
+    }
+
+    #modal-open:checked + .modal,
+    #modal-open2:checked + .modal,
+    #modal-open3:checked + .modal,
+    #modal-open4:checked + .modal,
+    #modal-open5:checked + .modal,
+    #modal-open6:checked + .modal,
+    #modal-open7:checked + .modal,
+    #modal-open8:checked + .modal,
+    #modal-open9:checked + .modal,
+    #modal-open10:checked + .modal,
+    #modal-open11:checked + .modal,
+    #modal-open12:checked + .modal,
+    #modal-open13:checked + .modal,
+    #modal-open14:checked + .modal,
+    #modal-open15:checked + .modal,
+    #modal-open16:checked + .modal {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    .card-img {
+        @include respond-to(desktop) {
+            transition: all 0.5s 0s ease;
+
+            &:hover {
+                transform: scale(0.98, 0.98);
+                cursor: pointer;
+            }
+        }
+    }
+
+    #spring {
+        background: linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 238, 253, 0.5) 38%,
+            rgba(255, 255, 255, 0) 100%
+        );
+
+        .cherry-blossom-container {
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                width: 20%;
+                max-width: 5.625em;
+                height: 20%;
+                top: 7%;
+                left: 1%;
+                z-index: 0;
+                background-image: url(../images/icon-cracker.svg);
+                background-repeat: no-repeat;
+                background-size: contain;
+                filter: drop-shadow(0.2rem 0.2rem 0 rgba(0, 0, 0, 0.2));
+                animation: fuwafuwa 3s infinite ease-in-out 0.3s alternate;
+            }
+
+            @include respond-to(tablet) {
+                &::after {
+                    max-width: 8em;
+                }
+            }
+        }
+    }
+
+    #summer {
+        background: linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0) 0%,
+            get-color(primary, light) 38%,
+            rgba(255, 255, 255, 0) 100%
+        );
+        background-repeat: no-repeat;
+    }
+
+    .summer-container {
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 20%;
+            max-width: 5.625em;
+            height: 20%;
+            bottom: -8%;
+            left: 1%;
+            z-index: 0;
+            background-image: url(../images/icon-whale.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            filter: drop-shadow(0.2rem 0.2rem 0 rgba(0, 0, 0, 0.2));
+            animation: fuwafuwa 3s infinite ease-in-out 0.3s alternate;
+        }
+
+        @include respond-to(tablet) {
+            &::after {
+                max-width: 8em;
+                bottom: -11%;
+            }
+        }
+    }
+
+    #autumn {
+        background: linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(254, 220, 64, 0.2) 38%,
+            rgba(255, 255, 255, 0) 100%
+        );
+    }
+
+    .leaves-container {
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 20%;
+            max-width: 5.625em;
+            height: 20%;
+            top: 8%;
+            right: 2%;
+            z-index: 0;
+            background-image: url(../images/icon-pumpkin.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            filter: drop-shadow(0.2rem 0.2rem 0 rgba(0, 0, 0, 0.2));
+            animation: fuwafuwa 3s infinite ease-in-out 0.3s alternate;
+        }
+
+        @include respond-to(tablet) {
+            &::after {
+                max-width: 8em;
+            }
+        }
+    }
+
+    #winter {
+        background: linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(101, 181, 227, 0.5) 50%,
+            rgba(101, 181, 227, 1) 87%,
+            rgba(255, 255, 255, 1) 90%,
+            rgba(255, 255, 255, 1) 100%
+        );
+        position: relative;
+        padding-bottom: 10%;
+        @include respond-to(desktop) {
+            padding-bottom: 0;
+        }
+    }
+
+    .snow-container {
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 20%;
+            max-width: 5.625em;
+            height: 20%;
+            bottom: -9%;
+            left: 1%;
+            z-index: 0;
+            background-image: url(../images/icon-snowman.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            filter: drop-shadow(0.2rem 0.2rem 0 rgba(0, 0, 0, 0.2));
+            animation: fuwafuwa 3s infinite ease-in-out 0.3s alternate;
+        }
+
+        @include respond-to(tablet) {
+            &::after {
+                max-width: 8em;
+                bottom: -11%;
+            }
+        }
+    }
+
+    .overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        top: 0;
+        left: 0;
+    }
+
+    //modal 大きさ調整コンテンツ
+    .modal .content {
+        position: absolute;
+        width: 90%;
+        max-height: 98vh;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #fff;
+        border-radius: 1rem;
+        box-shadow: 0 3px 15px -2px #222;
+        margin: 0 auto;
+        padding: 2%;
+
+        p {
+            text-align: left;
+            max-width: 80%;
+            margin: 0 auto;
+            padding: 0.25rem 0;
+            font-size: 0.875em;
+        }
+
+        @include respond-to(tablet) {
+            width: auto;
+        }
+    }
+
+    .close-btn {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        top: 10px;
+        right: 20px;
+        border-radius: 50%;
+        border: 2px solid get-color(primary, light);
+        cursor: pointer;
+
+        &:after,
+        &:before {
+            content: "";
+            position: absolute;
+            width: 70%;
+            height: 2px;
+            background: get-color(primary, light);
+            left: 15%;
+            top: 50%;
+            top: calc(50% - 1px);
+            transform-origin: 50% 50%;
+            transform: rotate(45deg);
+        }
+
+        &:before {
+            transform: rotate(-45deg);
+        }
+    }
+
+    .close-btn-othor {
+        border: 2px solid get-color(gray);
+
+        &:after,
+        &:before {
+            background: get-color(gray);
+        }
+    }
+
+    .popup-pic {
+        width: 100%;
+        height: auto;
+        text-align: center;
+
+        img {
+            border-radius: 1rem;
+            max-height: 80vh;
+        }
+    }
+
+    .action-btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background: #4caf50;
+        color: #fff;
+        border-radius: 15px;
+    }
+
+    .flex {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 1024px;
+        margin: 0 auto;
+
+        @include respond-to(tablet) {
+        }
+    }
+
+    .snow-container,
+    .cherry-blossom-container,
+    .leaves-container,
+    .summer-container {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .snow {
+        background-color: #fff;
+        border-radius: 50%;
+        position: absolute;
+        animation: animate-snow 15s linear;
+    }
+
+    @keyframes animate-snow {
+        0% {
+            opacity: 0;
+            top: 0;
+        }
+
+        10% {
+            opacity: 1;
+        }
+
+        90% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+            top: 100%;
+        }
+    }
+
+    .petal {
+        position: absolute;
+        background-color: #ffc0cb;
+        /* 花びらの色 */
+        border-radius: 150% 0 150% 0;
+        animation: animate-petal 10s linear;
+    }
+
+    .petal::after {
+        content: "";
+        position: absolute;
+        top: -14%;
+        left: -10%;
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: #ffc0cb;
+        border-radius: 150% 0 150% 0;
+        transform: rotate(15deg);
+    }
+
+    @keyframes animate-petal {
+        0% {
+            top: 0;
+            opacity: 0;
+            transform: rotate(0deg);
+        }
+
+        10% {
+            opacity: 0.8;
+        }
+
+        90% {
+            opacity: 0.8;
+        }
+
+        100% {
+            opacity: 0;
+            top: 100%;
+            transform: rotate(3000deg);
+        }
+    }
+
+    .leaf {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        position: absolute;
+        animation: animate-leaf 8s linear;
+    }
+
+    .leaf-1 {
+        background-image: url(../images/leaf-1.svg);
+    }
+
+    .leaf-2 {
+        background-image: url(../images/leaf-2.svg);
+    }
+
+    .leaf-3 {
+        background-image: url(../images/leaf-3.svg);
+    }
+
+    @keyframes animate-leaf {
+        0% {
+            opacity: 0;
+            top: 0;
+            transform: rotate(0);
+        }
+
+        10% {
+            opacity: 1;
+        }
+
+        90% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+            top: 100%;
+            transform: rotate(1080deg);
+        }
+    }
+
+    .summer {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        position: absolute;
+        animation: animate-summer 8s linear;
+    }
+
+    .summer-1 {
+        background-image: url(../images/summer-icon-suika.svg);
+    }
+
+    .summer-2 {
+        background-color: transparent;
+        border-radius: 50%;
+        border: solid #fff 1px;
+        position: absolute;
+        animation: animate-snow 10s linear;
+    }
+
+    .summer-3 {
+        background: linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 232, 0, 1) 100%
+        );
+        border-radius: 50%;
+        border: solid rgb(255, 232, 0) 1px;
+        position: absolute;
+        animation: animate-snow 10s linear;
+    }
+
+    @keyframes animate-summer {
+        0% {
+            opacity: 0;
+            top: 0;
+            transform: rotate(0);
+        }
+
+        10% {
+            opacity: 1;
+        }
+
+        90% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+            top: 100%;
+            transform: rotate(360deg);
+        }
+    }
+
+    .others-p {
+        width: 80%;
+        max-width: 1024px;
+        margin: 0 auto;
+        padding-bottom: 10vw;
+        text-align: center;
+        span.note {
+            @include respond-to(desktop) {
+                font-size: 1rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,20 @@
+.main-flag {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 2vw;
+    width: min(15%, 100px);
+
+    img {
+        width: 100%;
+    }
+
+    a {
+        filter: drop-shadow(0px 0px 5px white);
+        animation: pulse 1s alternate-reverse infinite;
+    }
+
+    @include respond-to(tablet) {
+        display: none;
+    }
+}

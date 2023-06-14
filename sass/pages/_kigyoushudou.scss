@@ -1,0 +1,62 @@
+.page-template-kigyoushudou {
+    h3 {
+        @include respond-to(desktop) {
+            padding: 2vw;
+        }
+    }
+
+    h4 {
+        @include respond-to(desktop) {
+            padding: 6vw 0 0 0;
+        }
+    }
+
+    p {
+        @include respond-to(desktop) {
+            width: 70%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-inline: auto;
+        }
+    }
+    .section-image {
+        @include respond-to(desktop) {
+            width: 70%;
+            margin: 2vw auto;
+        }
+    }
+    .school-box {
+        padding: 0.8em 0.5em;
+        margin: 2em 0;
+        background: get-color(primary);
+        border-radius: 8px;
+
+        @include respond-to(desktop) {
+            width: 70%;
+            margin: 0 auto;
+        }
+
+        .box-title {
+            color: #fff;
+            font-size: 1.2em;
+            text-align: center;
+            letter-spacing: 0.05em;
+            @include respond-to(desktop) {
+                font-size: 1.5em;
+            }
+        }
+        .box-text {
+            padding: 1em;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2vw;
+            width: 100%;
+
+            span {
+                @include tags();
+                background: white;
+            }
+        }
+    }
+}

@@ -1,0 +1,35 @@
+/*
+Theme Name: Little Garden
+Author: masa
+Version: 2.0
+*/
+
+// CSS RESET
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    width: 100%;
+    margin: 0 auto;
+}
+ul li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}

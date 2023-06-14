@@ -1,0 +1,296 @@
+#front-page {
+    // h1
+    .visuallyhidden {
+        position: absolute;
+        clip: rect(1px, 1px, 1px, 1px);
+        -webkit-clip-path: inset(0px 0px 99.9% 99.9%);
+        clip-path: inset(0px 0px 99.9% 99.9%);
+        overflow: hidden;
+        height: 1px;
+        width: 1px;
+        padding: 0;
+        border: 0;
+    }
+
+    .hero-slider {
+        height: auto;
+
+        .slick-list,
+        .slick-track,
+        .hero-slider-item {
+            height: auto;
+            img {
+                width: 100%;
+            }
+        }
+        visibility: hidden;
+        &.slick-initialized {
+            visibility: visible;
+        }
+    }
+    .slick-dots {
+        bottom: -25px;
+        li button:before {
+            color: get-color(primary);
+            font-size: 10px;
+        }
+    }
+    .slick-dotted.slick-slider {
+        margin-bottom: 0;
+        box-shadow: 1px 1px 5px 1px rgb(0 0 0 / 5%);
+    }
+
+    section {
+        padding: $section-padding 0;
+    }
+    h2 {
+        text-align: center;
+        margin-bottom: 5vw;
+    }
+
+    #news {
+        h2 {
+            color: get-color(primary);
+            margin-top: 0;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 2px white;
+        }
+        .blog-list {
+            display: flex;
+            justify-content: center;
+            @include respond-to(tablet) {
+                max-width: 1024px;
+                margin-left: auto;
+                margin-right: auto;
+                margin-inline: auto;
+            }
+        }
+
+        .blog-list-item {
+            flex: 1;
+            border: none;
+            padding: 0;
+            background: white;
+            margin: 0 1rem;
+            border: 1px solid get-color(primary);
+
+            a {
+                position: relative;
+                color: get-color(primary);
+                align-items: flex-end;
+                flex-direction: column;
+                gap: 0;
+                height: 65vw;
+                @include respond-to(tablet) {
+                    height: 100%;
+                }
+            }
+        }
+        .blog-list-thumbnail {
+            width: 100%;
+            position: relative;
+            flex: 3;
+            @include respond-to(tablet) {
+                flex: none;
+                height: 200px;
+            }
+        }
+        .blog-list-text {
+            width: 100%;
+            padding: 0.5em 1em;
+            flex: 1;
+            @include respond-to(tablet) {
+                flex: none;
+                height: 90px;
+            }
+
+            span {
+                line-height: 1.2;
+                letter-spacing: -1px;
+                @include ellipsis(2);
+                margin: 0.5em 0;
+                font-weight: 700;
+            }
+        }
+        .slick-prev {
+            left: -2rem;
+        }
+        .slick-prev:before,
+        .slick-next:before {
+            color: get-color(primary);
+            font-size: 2rem;
+        }
+        .afterschool_banner {
+          display: flex;
+          justify-content: center;
+          margin-top: 5em;
+          a {
+            transition: all 0.3s;
+            &:hover {
+              transform: translate(1px, 1px);
+              filter: brightness(110%);
+            }
+            img {
+              filter: drop-shadow(2px 2px 2px #c4c4c4);
+            }
+          }
+        }
+    }
+
+    #intro {
+        background: get-color(primary, light);
+
+        .intro-title {
+            padding-bottom: 5vw;
+        }
+
+        h2 {
+            font-family: serif;
+            font-size: clamp(1.8rem, 1.5rem + 2vw, 3rem);
+            text-shadow: 2px 2px 2px white;
+            background: url(../images/icon_leaf.png);
+            background-position: bottom center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            margin: 0;
+            padding: min(5vw, 2rem) 0;
+        }
+        p {
+            font-size: 1rem;
+            font-size: clamp(1rem, 0.73rem + 1.16vw, 1.47rem);
+            font-weight: 600;
+            line-height: 2;
+            @include respond-to(desktop) {
+                width: 92%;
+                margin-left: auto;
+                margin-right: auto;
+                margin-inline: auto;
+            }
+        }
+    }
+
+    #about-us {
+        background: get-color(primary, light);
+
+        .about-us {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            @include respond-to(desktop) {
+                max-width: 1200px;
+                margin-left: auto;
+                margin-right: auto;
+                margin-inline: auto;
+            }
+
+            .about-us-item {
+                @include respond-to(desktop) {
+                    display: grid;
+                    grid-template-areas:
+                        "title image"
+                        "text image"
+                        "text image";
+                    grid-template-columns: repeat(2, 1fr);
+                    margin-bottom: 7rem;
+                    border-top: 5px dotted get-color(primary);
+                    padding-top: 7rem;
+
+                    &:nth-child(even) {
+                        grid-template-areas:
+                            "image title"
+                            "image text"
+                            "image text";
+                    }
+                }
+            }
+            .about-us-title {
+                padding: 10vw 0;
+                color: get-color(primary);
+                display: flex;
+                align-items: center;
+                gap: 5vw;
+                border-top: 5px dotted get-color(primary);
+                span {
+                    font-size: 3rem;
+                    font-family: "Montserrat", sans-serif;
+                    text-align: center;
+                    padding-right: min(5vw, 30px);
+                    border-right: 2px solid get-color(primary);
+                }
+                h3 {
+                    font-family: "Kiwi Maru", serif;
+                    color: black;
+                    @include respond-to(desktop) {
+                        font-size: 1.7rem;
+                    }
+                }
+                grid-area: title;
+                width: 90%;
+                margin-left: auto;
+                margin-right: auto;
+                margin-inline: auto;
+                @include respond-to(desktop) {
+                    padding: 0;
+                    border-top: none;
+                    gap: 30px;
+                }
+            }
+
+            img {
+                display: block;
+                object-fit: cover;
+                grid-area: image;
+                @include respond-to(desktop) {
+                    border-radius: 10px;
+                    filter: drop-shadow(2px 2px 5px get-color(gray, dark));
+                }
+            }
+            .about-us-text {
+                padding-bottom: 10vw;
+                grid-area: text;
+                width: 90%;
+                margin-left: auto;
+                margin-right: auto;
+                margin-inline: auto;
+                @include respond-to(desktop) {
+                    padding-bottom: 0;
+                }
+                p {
+                    margin: 2rem 0;
+                }
+            }
+        }
+        .more-button {
+            padding: min(5vw, 2rem) 0;
+        }
+    }
+    .school-list {
+        margin-bottom: 0;
+    }
+    .blog-button {
+        padding: 0;
+    }
+    #sns {
+        .sns-banner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: min(10vw, 5rem);
+            @include respond-to(desktop) {
+                a {
+                    transition: all 0.3s;
+                    text-decoration: none;
+
+                    &:hover {
+                        transform: translate(1px, 1px);
+                        filter: brightness(110%);
+                    }
+                }
+            }
+            img {
+                filter: drop-shadow(2px 2px 2px get-color(gray));
+            }
+        }
+    }
+}

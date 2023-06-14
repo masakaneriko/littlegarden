@@ -1,0 +1,450 @@
+.postid-432 {
+    main {
+        background-image: url(../images/course_craftpaper2.jpg);
+        background-repeat: repeat-y;
+        background-size: contain;
+        overflow: hidden;
+    }
+
+    // navigation
+    .page-link {
+        padding-top: 20vw;
+        position: relative;
+
+        @include respond-to(tablet) {
+            padding-top: 10vw;
+        }
+
+        &::before {
+            background: linear-gradient(-45deg, transparent 16px, white 0),
+                linear-gradient(45deg, transparent 16px, white 0);
+            background-repeat: repeat-x;
+            background-position: left bottom;
+            background-size: 22px 32px;
+            content: "";
+            display: block;
+            width: 100%;
+            height: 32px;
+            position: absolute;
+            top: 0;
+            left: 0px;
+        }
+
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            column-gap: 5vw;
+            align-items: center;
+            row-gap: 15px;
+        }
+        li {
+            width: 28%;
+            height: auto;
+
+            &:nth-of-type(1) {
+                order: 1;
+            }
+
+            &:nth-of-type(2) {
+                order: 4;
+            }
+
+            &:nth-of-type(3) {
+                order: 2;
+            }
+
+            &:nth-of-type(4) {
+                order: 5;
+            }
+
+            &:nth-of-type(5) {
+                order: 3;
+            }
+
+            @include respond-to(desktop) {
+                width: 8vw;
+                height: 100%;
+                margin: 0;
+
+                &:nth-of-type(1) {
+                    order: 1;
+                }
+
+                &:nth-of-type(2) {
+                    order: 2;
+                }
+
+                &:nth-of-type(3) {
+                    order: 3;
+                }
+
+                &:nth-of-type(4) {
+                    order: 4;
+                }
+
+                &:nth-of-type(5) {
+                    order: 5;
+                }
+            }
+
+            img {
+                width: 15vw;
+                animation: yurayura 15s infinite;
+                filter: drop-shadow(2px 3px 3px #736357);
+            }
+        }
+        a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            font-weight: 700;
+            line-height: 1;
+            transition: all 0.3s ease-in-out;
+            gap: 0.2em;
+            &:hover,
+            &focus {
+                transform: translateY(-2px);
+            }
+        }
+        span {
+            display: block;
+            text-align: center;
+            white-space: nowrap;
+            @include respond-to(desktop) {
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+    // Sections
+    #star,
+    #nursery,
+    #preschool,
+    #k1,
+    #k2 {
+        padding: 2em 0 0 0;
+    }
+
+    .age {
+        font-size: 1rem;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    .class-name {
+        position: relative;
+        margin: 0 auto;
+        width: 50%;
+
+        @include respond-to(desktop) {
+            width: 35%;
+        }
+    }
+
+    .section-image {
+        border: 2px solid white;
+        box-shadow: 2px 2px 5px #3d3d3d;
+    }
+
+    img {
+        display: block;
+
+        @include respond-to(desktop) {
+            width: 100%;
+        }
+    }
+
+    section:nth-of-type(odd) .section-image {
+        transform: rotate(2deg);
+    }
+    section:nth-of-type(even) .section-image {
+        transform: rotate(-2deg);
+    }
+
+    @include respond-to(desktop) {
+        .flexbox {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+
+            .box {
+                flex-basis: 50%;
+                padding: 0;
+            }
+        }
+    }
+
+    %tacks {
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 15vw;
+            height: 15vw;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+
+            @include respond-to(desktop) {
+                width: 5vw;
+                height: 5vw;
+            }
+        }
+    }
+    .tacks {
+        @extend %tacks;
+        &::before,
+        &::after {
+            background-image: url(../images/thumbtack.png);
+            top: -15%;
+        }
+        &::before {
+            transform: rotate(-90deg);
+            left: -7%;
+        }
+        &::after {
+            right: -7%;
+        }
+    }
+    .tacks2 {
+        @extend %tacks;
+        &::before {
+            background-image: url(../images/thumbtack2.png);
+            top: -20%;
+            left: 50%;
+            @include respond-to(desktop) {
+                width: 5vw;
+                height: 5vw;
+            }
+        }
+    }
+    .tacks3 {
+        @extend %tacks;
+        &::before,
+        &::after {
+            width: 10vw;
+            height: 10vw;
+            background-image: url(../images/thumbtack3.png);
+            top: -10%;
+            @include respond-to(desktop) {
+                width: 5vw;
+                height: 5vw;
+            }
+        }
+        &::before {
+            transform: rotate(-90deg);
+            left: -7%;
+        }
+        &::after {
+            right: -5%;
+        }
+    }
+    .section-text {
+        position: relative;
+        z-index: 1;
+
+        @include respond-to(desktop) {
+            padding: 3vw 0 2vw 2vw;
+        }
+    }
+
+    .course-goal {
+        background: #fff;
+        background-image: linear-gradient(
+                0deg,
+                transparent calc(100% - 1px),
+                #f0f0f0 calc(100% - 1px)
+            ),
+            linear-gradient(
+                90deg,
+                transparent calc(100% - 1px),
+                #f0f0f0 calc(100% - 1px)
+            );
+        background-size: 30px 30px;
+        background-repeat: repeat;
+        background-position: center center;
+        padding: 1.3rem;
+        box-shadow: 0 2px 3px rgba(0, 0, 0, 0.22);
+        line-height: 1.8;
+        font-weight: bold;
+        position: relative;
+
+        .masking-tape {
+            position: absolute;
+            top: 25px;
+            left: 10px;
+            right: 10px;
+            width: 30%;
+            height: 40px;
+            opacity: 0.3;
+            margin: -40px auto 10px 35%;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            transform: rotate(-2deg);
+            background: get-color(primary);
+        }
+
+        p {
+            margin: 0;
+            // padding: 0 1rem;
+            font-size: 1rem;
+        }
+
+        span.en {
+            font-weight: 500;
+            font-size: 0.8rem;
+            color: get-color(gray, dark);
+        }
+
+        .course-goal-title {
+            font-size: 1.2em;
+            text-align: center;
+            color: get-color(primary);
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+    }
+
+    // Bird animations
+    .slidein-top-1 {
+        position: relative;
+        z-index: 0;
+
+        &::before {
+            content: "";
+            display: block;
+            width: 25vw;
+            height: 25vw;
+            background-image: url(../images/course_star_bird.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100% 100%;
+            position: absolute;
+            z-index: 5;
+            bottom: -10vw;
+            right: -5vw;
+            transform: rotate(10deg);
+            animation: yurayura 4s linear infinite;
+
+            @include respond-to(desktop) {
+                width: 10vw;
+                height: 10vw;
+            }
+        }
+    }
+
+    .slidein-top-2 {
+        position: relative;
+        z-index: 0;
+
+        &::before {
+            content: "";
+            display: block;
+            width: 25vw;
+            height: 25vw;
+            background-image: url(../images/course_nursery_bird.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100% 100%;
+            position: absolute;
+            z-index: 5;
+            bottom: -5vw;
+            left: -5vw;
+            transform: rotate(10deg);
+            animation: slidein 3s infinite ease-in-out alternate;
+
+            @include respond-to(desktop) {
+                width: 10vw;
+                height: 10vw;
+            }
+        }
+    }
+
+    .slidein-top-3 {
+        position: relative;
+        z-index: 0;
+
+        &::before {
+            content: "";
+            display: block;
+            width: 45vw;
+            height: 25vw;
+            background-image: url(../images/course_preschool_bird.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 85%;
+            position: absolute;
+            z-index: 5;
+            bottom: -9vw;
+            right: -10vw;
+            transform: rotate(10deg);
+            animation: yurayura 10s linear infinite;
+
+            @include respond-to(desktop) {
+                width: 15vw;
+                height: 15vw;
+                bottom: -7vw;
+            }
+        }
+    }
+
+    .slidein-top-4 {
+        position: relative;
+        z-index: 0;
+
+        &::before {
+            content: "";
+            display: block;
+            width: 25vw;
+            height: 25vw;
+            background-image: url(../images/course_k1_bird.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 90%;
+            position: absolute;
+            z-index: 5;
+            bottom: -9vw;
+            left: -10vw;
+            transform: rotate(10deg);
+            animation: yurayura 4s linear infinite;
+
+            @include respond-to(desktop) {
+                width: 10vw;
+                height: 10vw;
+                bottom: -5vw;
+                left: -5vw;
+            }
+        }
+    }
+
+    .slidein-top-5 {
+        position: relative;
+        z-index: 0;
+
+        &::before {
+            content: "";
+            display: block;
+            width: 35vw;
+            height: 30vw;
+            background-image: url(../images/course_k2_bird.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 90%;
+            position: absolute;
+            z-index: 5;
+            bottom: -6vw;
+            right: -10vw;
+            transform: rotate(10deg);
+            animation: slidein 3s infinite ease-in-out alternate;
+
+            @include respond-to(desktop) {
+                width: 12vw;
+                height: 12vw;
+                bottom: -3vw;
+                right: -2vw;
+            }
+        }
+    }
+}

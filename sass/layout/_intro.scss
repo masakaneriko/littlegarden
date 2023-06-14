@@ -1,0 +1,34 @@
+#intro {
+    text-align: center;
+    padding: $section-padding 0;
+    background: white;
+
+    @include respond-to(desktop) {
+        h1 {
+            text-shadow: 2px 2px 2px white;
+            background: url(../images/icon_leaf.png);
+            background-position: bottom center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            margin: 0;
+            padding: min(5vw, 1rem) 0;
+        }
+    }
+
+    .intro-text {
+        display: flex;
+        flex-direction: column;
+        gap: 7vw;
+        visibility: hidden;
+        @include respond-to(desktop) {
+            gap: 5vw;
+            p {
+                font-size: 1.2rem;
+                width: 80%;
+                margin-left: auto;
+                margin-right: auto;
+                margin-inline: auto;
+            }
+        }
+    }
+}

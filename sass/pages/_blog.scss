@@ -1,0 +1,183 @@
+// MOST OF THESE CLASSES ARE USED IN MULTIPLE LOCATIONS
+// USE CAUTION WHEN MODIFYING
+// (front-page.php ,archive-blog.php, taxonomy-school.php,
+// single-blog.php, center-template.php)
+
+.tax-school .hero-title,
+.single-blog .hero-title,
+.single-news .hero-title {
+    color: white;
+    text-shadow: 2px 2px 5px black;
+    word-break: keep-all;
+    text-align: center;
+}
+// compensate for not having an intro section
+.tax-school #hero {
+    padding-bottom: $section-padding;
+}
+
+.blog-list {
+    margin-bottom: min(10vw, 3rem);
+}
+
+.blog-list-item {
+    border-bottom: 2px solid get-color(gray, light);
+    padding: 20px 0 10px;
+
+    a {
+        display: flex;
+        transition: 0.3s;
+        color: black;
+        gap: 2vw;
+        align-items: center;
+
+        &:hover,
+        &:focus {
+            opacity: 0.9;
+            color: get-color(secondary);
+        }
+    }
+}
+.blog-list-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: start;
+    gap: 1vw;
+
+    h3 {
+        @include ellipsis(2);
+    }
+}
+.blog-list-thumbnail {
+    width: $square-40vw;
+    height: min(30vw, 250px);
+    @include respond-to(desktop) {
+        width: 40%;
+    }
+
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+.blog-date {
+    color: get-color(primary);
+    font-weight: bold;
+}
+.blog-categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 5px;
+    overflow: hidden;
+
+    span {
+        @include tags();
+    }
+    span.school-color {
+        background: get-color(secondary);
+        background: get-color(blue);
+    }
+}
+
+// single-blog
+#blog-content {
+    padding-top: $section-padding;
+
+    .blog-title {
+        font-size: 1.5rem;
+        font-size: clamp(1.5rem, 0.9rem + 1.5vw, 2rem);
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 3vh;
+    }
+
+    .blog-categories {
+        justify-content: center;
+        margin-bottom: 3vh;
+    }
+
+    .blog-date {
+        text-align: start;
+        margin-bottom: 7vh;
+    }
+
+    p {
+        margin-bottom: 20px;
+    }
+
+    img {
+        margin-bottom: 20px;
+    }
+}
+
+// included in front-page.php, taxonomy-school.php & single-blog.php & single-news.php
+.blog-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: min(5vw, 3rem) 0;
+
+    a {
+        &::after {
+            content: "\f178";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 700;
+            padding-left: 10px;
+        }
+    }
+}
+
+// aside stuff
+.schools-nav {
+    aside {
+        display: none;
+    }
+
+    @include respond-to(desktop) {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 3rem;
+
+        aside {
+            display: block;
+            flex: 1;
+
+            .schools-nav-title {
+                padding: 0.5rem 0.9rem;
+                background: get-color(primary);
+                color: white;
+                border-radius: 10px;
+                margin-bottom: 2rem;
+                font-size: 1.17rem;
+            }
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+            li {
+                padding-bottom: 1rem;
+                border-bottom: 1px dashed get-color(gray);
+            }
+            a {
+                display: inline-block;
+                &::before {
+                    content: "-";
+                    position: relative;
+                    padding-right: 10px;
+                }
+            }
+        }
+
+        ul.blog-list,
+        .blog-main {
+            flex: 3;
+        }
+    }
+}

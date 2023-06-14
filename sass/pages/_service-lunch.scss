@@ -1,0 +1,73 @@
+#single-service-lunch {
+    img {
+        display: block;
+    }
+
+    section#education {
+        padding-top: $section-padding;
+        @include respond-to(desktop) {
+            padding-bottom: 0;
+        }
+    }
+
+    .bg-skew {
+        .bg-unfill {
+            box-shadow: white;
+        }
+    }
+
+    .sub-read2 {
+        h2 {
+            text-align: center;
+        }
+    }
+
+    // Read more button
+    #more,
+    #more2 {
+        display: none;
+    }
+
+    #dots,
+    #more,
+    #dots2,
+    #more2 {
+        transition: all 2s ease;
+    }
+
+    #myBtn,
+    #myBtn2 {
+        display: block;
+        color: white;
+        background: get-color(pink);
+        padding: 0.7em 0.9em;
+        margin-top: 2em;
+    }
+    @include respond-to(tablet) {
+        .flex {
+            display: flex;
+        }
+
+        .section-image {
+            width: 50%;
+        }
+
+        .section-text {
+            width: 40%;
+            margin: $section-padding auto;
+            p {
+                margin: 0;
+            }
+        }
+
+        .bg-skew-end {
+            padding-top: 10vw;
+        }
+    }
+}
+
+.postid-498 {
+    .footer-top {
+        background-color: get-color(primary, light);
+    }
+}

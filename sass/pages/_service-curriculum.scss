@@ -1,0 +1,334 @@
+.postid-411 {
+    main {
+        background-image: url(../images/bg-cloth.png);
+        background-size: 20vw;
+        background-repeat: repeat;
+    }
+}
+
+#single-service-curriculum {
+    h2,
+    h3 {
+        margin: $section-padding 0;
+    }
+
+    .lead-wrap {
+        max-width: 80%;
+        margin: 2rem auto;
+
+        h3 {
+            text-align: center;
+            margin: 2rem auto;
+
+            &::after {
+                display: block;
+                content: "";
+                margin: 1em auto;
+                width: 50%;
+                height: 1rem;
+                background-image: linear-gradient(
+                    to right,
+                    get-color(primary) 0.7rem,
+                    transparent 0.7rem
+                );
+                background-size: 1rem 0.15rem;
+                background-repeat: repeat-x;
+                background-position: left bottom;
+            }
+        }
+    }
+
+    .explanation-wrap {
+        padding-bottom: 1.3rem;
+    }
+
+    h3 > span {
+        font-weight: 400;
+        font-family: "Caveat", cursive;
+        font-size: 120%;
+    }
+
+    .backgroundclip {
+        text-align: center;
+        -webkit-background-clip: text;
+        background-clip: text;
+        background-color: get-color(primary);
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: transparent;
+        text-transform: uppercase;
+
+        p {
+            padding-top: 2.5rem;
+            font-size: 3rem;
+            font-weight: 800;
+        }
+    }
+
+    .slidein-top-1 {
+        position: relative;
+        z-index: 1;
+
+        &::before {
+            content: "";
+            display: block;
+            width: 15vw;
+            max-width: 7rem;
+            height: 15vw;
+            max-height: 10rem;
+            background-image: url(../images/nordic-note.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+
+            position: absolute;
+            z-index: 1;
+            top: -10rem;
+            right: 0vw;
+            transform: rotate(10deg);
+            animation: slidein 3s infinite ease-in-out alternate;
+        }
+    }
+
+    .up-and-down-anim {
+        position: relative;
+        z-index: 0;
+
+        &::before {
+            content: "";
+            display: block;
+            width: 15vw;
+            max-width: 7rem;
+            height: 15vw;
+            max-height: 10rem;
+            background-image: url(../images/nordic-tree.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            position: absolute;
+            z-index: 5;
+            top: -30%;
+            right: -3vw;
+            animation: up-and-down-anim 3s infinite ease-in-out alternate;
+        }
+    }
+
+    .slidein-top-3 {
+        position: relative;
+        z-index: 0;
+
+        &::before {
+            content: "";
+            display: block;
+            width: 15vw;
+            max-width: 7rem;
+            height: 15vw;
+            max-height: 10rem;
+            background-image: url(../images/nordic-rabbit.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            position: absolute;
+            z-index: 0;
+            top: -12vw;
+            left: -3vw;
+            animation: slidein3 1.5s ease-in-out infinite alternate;
+        }
+
+        @include respond-to(tablet) {
+            &::before {
+                left: 16vw;
+                top: 0;
+            }
+        }
+    }
+
+    .slidein-bottom-4 {
+        position: relative;
+        z-index: 0;
+
+        &::before {
+            content: "";
+            display: block;
+            width: 15vw;
+            max-width: 7rem;
+            height: 15vw;
+            max-height: 10rem;
+            background-image: url(../images/nordic-fox.svg);
+            background-repeat: no-repeat;
+
+            position: absolute;
+
+            bottom: -20%;
+            left: 33vw;
+            animation: slidein 5s ease-in-out infinite alternate;
+        }
+    }
+
+    .step-bottom-5 {
+        position: relative;
+        z-index: 0;
+
+        &::before {
+            content: "";
+            display: block;
+            width: 20vw;
+            max-width: 7rem;
+            height: 20vw;
+            max-height: 10rem;
+            background-image: url(../images/nordic-squirrel.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            position: absolute;
+            z-index: 5;
+            bottom: -30%;
+            left: 3vw;
+            animation: step 2s steps(2) infinite;
+        }
+    }
+
+    .step-bottom {
+        position: relative;
+        z-index: 0;
+
+        &::before {
+            content: "";
+            display: block;
+            width: 20vw;
+            max-width: 7rem;
+            height: 20vw;
+            max-height: 10rem;
+            background-image: url(../images/nordic-bear.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            position: absolute;
+            z-index: 1;
+            bottom: -22vw;
+            left: 3vw;
+            animation: step 2s steps(2) 0.8s infinite;
+        }
+
+        @include respond-to(tablet) {
+            &::before {
+                left: 0vw;
+                bottom: -12vw;
+            }
+        }
+    }
+
+    .last-anim {
+        position: relative;
+        z-index: 1;
+        padding-bottom: 30%;
+
+        &::after {
+            content: "";
+            display: block;
+            width: 50%;
+            max-width: 18rem;
+            height: 60%;
+            background-image: url(../images/icon-universe.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            position: absolute;
+            z-index: 0;
+            bottom: -15%;
+            right: 25%;
+            animation: up-and-down-anim 4s infinite ease-in-out alternate;
+        }
+
+        @include respond-to(tablet) {
+            padding-bottom: 15%;
+
+            &::after {
+                left: 0;
+                right: 0;
+                height: 30%;
+                margin-left: auto;
+                margin-right: auto;
+                margin-inline: auto;
+                bottom: 0%;
+            }
+        }
+    }
+
+    .decoration-icon {
+        display: block;
+        margin: 0 auto;
+        width: 20px;
+        height: auto;
+    }
+
+    .piyooo {
+        @include respond-to(desktop) {
+            display: flex;
+            align-items: center;
+
+            .piyopiyo {
+                max-width: 500px;
+                order: 2;
+                flex: 1;
+                margin: 2rem 0 5rem;
+            }
+
+            .lead-wrap {
+                flex: 1;
+            }
+        }
+    }
+
+    @include respond-to(tablet) {
+        .underline-3 {
+            margin-bottom: 2rem;
+        }
+
+        .pc-flex {
+            display: flex;
+            position: relative;
+
+            .section-image {
+                width: 50%;
+
+                &.left {
+                    order: 1;
+                    clip-path: polygon(
+                        0% 0%,
+                        75% 0%,
+                        100% 50%,
+                        75% 100%,
+                        0% 100%
+                    );
+                }
+
+                &.right {
+                    order: 2;
+                    clip-path: polygon(
+                        0% 50%,
+                        25% 0%,
+                        100% 0%,
+                        100% 100%,
+                        25% 100%
+                    );
+                }
+            }
+
+            .section-text {
+                width: 50%;
+                margin: auto auto;
+                padding: 0 2rem;
+                order: 1;
+            }
+        }
+
+        .section-text::after {
+            content: "";
+            width: 25%;
+            height: 50%;
+            display: block;
+            background-color: #fff5d7e3;
+            position: absolute;
+            top: 110px;
+            left: 0%;
+            border-radius: 55% 45% 46% 54% / 51% 52% 48% 49%;
+            z-index: -5;
+        }
+    }
+}

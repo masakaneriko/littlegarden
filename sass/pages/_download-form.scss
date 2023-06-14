@@ -1,0 +1,46 @@
+.page-id-1032 {
+    .primary-form {
+        @include form;
+        margin-bottom: min(5vw, 2rem);
+    }
+    #hidden-downloads {
+        display: none;
+        background: white;
+        margin-bottom: $section-padding;
+        &.form-submitted {
+            display: block;
+        }
+        > div {
+            margin-bottom: 2em;
+            p {
+                margin-bottom: 0.5em;
+            }
+        }
+        ul,
+        li {
+            list-style: inside;
+            margin-bottom: 1em;
+        }
+        ul {
+            margin-left: 1em;
+        }
+        a {
+            display: block;
+            width: fit-content;
+            border: 1px solid black;
+            border-radius: 5px;
+            background: lighten(get-color(gray, dark), 20);
+            color: white;
+            font-size: 90%;
+            padding: 0.2em 0.5em;
+            margin-top: 0.5em;
+            transition: all 0.3s;
+            &:hover {
+                background: get-color(gray, dark);
+            }
+            i {
+                padding-right: 0.5em;
+            }
+        }
+    }
+}
