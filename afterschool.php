@@ -317,7 +317,7 @@ get_header(); ?>
             </div>
             <div class="flow-item">
               <div class="circle"></div>
-              <div class="flow-title">入園願書の提出</div>
+              <div class="flow-title">入会申込書の提出</div>
               <p class="flow-text">こちらからお申込みをお願いいたします。</p>
             </div>
             <div class="flow-item">
