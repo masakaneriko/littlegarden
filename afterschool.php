@@ -393,7 +393,7 @@ get_header(); ?>
             <p class="map"><a href="https://goo.gl/maps/oMEA234NwvMsVfr67" target="_blank">google map ＞</a></p>
             <p class="school_text">〒266-0033<br>
               千葉市緑区おゆみ野南2-12-1<br><br></p>
-            <p class="school_tel"><a href="tel:043-309-5091">TEL：043-309-5091（本部）</a></p>
+            <p class="school_tel"><a href="tel:043-309-5091">TEL：043-309-5091</a></p>
             <p><a class="school_icon" href="https://coubic.com/littlegarden_group/594781#pageContent" target="_blank" rel=“noopener”>見学予約はこちら</a></p>
           </div>
         </div>
